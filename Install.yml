@@ -32,8 +32,8 @@
 
     - name: Recursively decompress the files into the directory
       win_unzip:
-        src: C:\windows\temp\source.zip
-        dest: c:\inetpub\wwwroot\ansibledemo
+        src: 'C:\windows\temp\source.zip'
+        dest: 'c:\inetpub\wwwroot\ansibledemo'
         recurse: yes
         rm: true
 
