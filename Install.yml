@@ -1,6 +1,6 @@
 ---
 - name: Create and Configure website and app pool
-hosts: all
+  hosts: all
 
 tasks:
 - name: Create a new application pool in 'Started' state
