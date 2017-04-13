@@ -1,0 +1,25 @@
+---
+- name: Removte and delete website and app pool
+  hosts: all
+
+  tasks:
+    - name: Create ansibledemo website
+      win_iis_website:
+        name: "ansibledemo"
+        state: absent
+      register: website
+      
+    - name: Remove the folder
+      win_file:
+        path: c:\inetpub\wwwroot\ansibledemo
+        state: absent
+        
+    - name: Remove the apppool
+      win_iis_webapppool:
+        name: ansibledemo
+        state: absent
+        attributes: 'managedRuntimeVersion:v4.0'
+      register: webapppool
+
+
+
