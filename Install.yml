@@ -3,6 +3,13 @@
 hosts: all
 
 tasks:
+- name: Create a new application pool in 'Started' state
+  win_iis_webapppool:
+    name: ansibledemo
+    state: started
+    attributes: managedRuntimeVersion:v4.0
+  register: webapppool
+   
 - name: Create ansibledemo website
   win_iis_website:
     name: "ansibledemo"
@@ -10,15 +17,10 @@ tasks:
     port: 8081
     ip: 127.0.0.1
     hostname: acme.local
-    application_pool: "acme"
-    physical_path: c:\sites\acme
+    application_pool: "ansibledemo"
+    physical_path: c:\sites\ansibledemo
     parameters: logfile.directory:c:\sites\logs
   register: website
 
 
-- name: Create a new application pool in 'Started' state
-  win_iis_webapppool:
-    name: ansibledemo
-    state: started
-    attributes: managedRuntimeVersion:v4.0
-   register: webapppool
+
