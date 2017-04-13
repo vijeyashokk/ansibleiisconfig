@@ -16,7 +16,6 @@ tasks:
     state: started
     port: 8081
     ip: 127.0.0.1
-    hostname: acme.local
     application_pool: "ansibledemo"
     physical_path: c:\sites\ansibledemo
     parameters: logfile.directory:c:\sites\logs
