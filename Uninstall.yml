@@ -1,9 +1,9 @@
 ---
-- name: Removte and delete website and app pool
+- name: Removee and delete website and app pool
   hosts: all
 
   tasks:
-    - name: Create ansibledemo website
+    - name: Remove ansibledemo website
       win_iis_website:
         name: "ansibledemo"
         state: absent
