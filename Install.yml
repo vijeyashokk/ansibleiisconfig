@@ -1,0 +1,16 @@
+---
+- name: Create and Configure website and app pool
+hosts: all
+
+tasks:
+- name: Create ansibledemo website
+  win_iis_website:
+    name: "ansibledemo"
+    state: started
+    port: 8081
+    ip: 127.0.0.1
+    hostname: acme.local
+    application_pool: "acme"
+    physical_path: c:\sites\acme
+    parameters: logfile.directory:c:\sites\logs
+  register: website
