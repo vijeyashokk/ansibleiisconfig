@@ -27,7 +27,7 @@
       
     - name: Download the source from the repository
       win_get_url:
-        src: 'https://github.com/vijeyashokk/ansibleiisconfig/blob/master/source/index.html'
+        url: 'https://github.com/vijeyashokk/ansibleiisconfig/blob/master/source/index.html'
         dest: 'C:\windows\temp\source\index.html'
 
     - name: Recursively decompress the files into the directory
