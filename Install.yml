@@ -7,7 +7,7 @@ tasks:
   win_iis_webapppool:
     name: ansibledemo
     state: started
-    attributes: managedRuntimeVersion:v4.0
+    attributes: 'managedRuntimeVersion:v4.0'
   register: webapppool
    
 - name: Create ansibledemo website
