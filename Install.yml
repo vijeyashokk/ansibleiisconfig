@@ -26,13 +26,13 @@
       register: website
       
     - name: Download the source from the repository
-      win_get_url:
-        url: 'https://github.com/vijeyashokk/ansibleiisconfig/blob/master/source/source.zip'
-        dest: 'C:\windows\temp\source.zip'
+      win_copy:
+        src: 'https://github.com/vijeyashokk/ansibleiisconfig/blob/master/source'
+        dest: 'C:\windows\temp\source\'
 
     - name: Recursively decompress the files into the directory
-      win_unzip:
-        src: 'C:\windows\temp\source.zip'
+      win_copy:
+        src: 'C:\windows\temp\source'
         dest: 'c:\inetpub\wwwroot\ansibledemo'
         recurse: yes
         rm: true
