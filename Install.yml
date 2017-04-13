@@ -28,12 +28,4 @@
     - name: Download the source from the repository
       win_get_url:
         url: 'https://github.com/vijeyashokk/ansibleiisconfig/blob/master/source/default.html'
-        dest: 'C:\windows\temp\default.html'
-
-    - name: Recursively decompress the files into the directory
-      win_copy:
-        src: 'C:\windows\temp\default.html'
         dest: 'c:\inetpub\wwwroot\ansibledemo\default.html'
-
-
-
