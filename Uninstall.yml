@@ -1,5 +1,5 @@
 ---
-- name: Removee and delete website and app pool
+- name: Remove and delete website and app pool
   hosts: all
 
   tasks:
