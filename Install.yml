@@ -24,6 +24,18 @@
         application_pool: "ansibledemo"
         physical_path: c:\inetpub\wwwroot\ansibledemo
       register: website
+      
+    - name: Download the source from the repository
+      win_get_url:
+        url: 'https://github.com/vijeyashokk/ansibleiisconfig/blob/master/source/ASP.NET%20MVC%20Application%20Using%20Entity%20Framework%20Code%20First.zip'
+        dest: 'C:\windows\temp\source.zip'
+
+    - name: Recursively decompress the files into the directory
+      win_unzip:
+        src: C:\windows\temp\source.zip
+        dest: c:\inetpub\wwwroot\ansibledemo
+        recurse: yes
+        rm: true
 
 
 
