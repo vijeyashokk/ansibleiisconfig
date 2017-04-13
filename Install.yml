@@ -10,6 +10,11 @@
         attributes: 'managedRuntimeVersion:v4.0'
       register: webapppool
 
+    - name: Create directory structure for new website
+      win_file:
+        path: c:\inetpub\wwwroot\ansibledemo
+        state: directory
+        
     - name: Create ansibledemo website
       win_iis_website:
         name: "ansibledemo"
@@ -17,8 +22,7 @@
         port: 8081
         ip: 127.0.0.1
         application_pool: "ansibledemo"
-        physical_path: c:\sites\ansibledemo
-        parameters: logfile.directory:c:\sites\logs
+        physical_path: c:\inetpub\wwwroot\ansibledemo
       register: website
 
 
