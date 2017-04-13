@@ -14,3 +14,11 @@ tasks:
     physical_path: c:\sites\acme
     parameters: logfile.directory:c:\sites\logs
   register: website
+
+
+- name: Create a new application pool in 'Started' state
+  win_iis_webapppool:
+    name: ansibledemo
+    state: started
+    attributes: managedRuntimeVersion:v4.0
+   register: webapppool
